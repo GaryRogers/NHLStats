@@ -1,3 +1,4 @@
 RawData/*
 .DS_Store
 .vscode
+etc/secrets.json
