@@ -55,3 +55,7 @@ sudo docker run \
 Loading with Bulk Insert is _significanly_ faster than loading with Python. One issue I ran into is that `BULK INSERT` isn't particularly happy with the linux file system paths, so I had to copy the csv files it `/` to get them to load. Once that was done though, the files loaded very fast.
 
 I also took a backup of the database once the files were loaded. That should make bringing things up again after the initial load much faster, as I'll just restore the database rather than delaing with loading the csv files again.
+
+## Early Stats
+
+[NHL API Documentation](https://gitlab.com/dword4/nhlapi/blob/master/stats-api.md)
