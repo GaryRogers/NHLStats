@@ -1,7 +1,12 @@
-use nhlstats
-go
+IF (NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'game')) 
+BEGIN
+    EXEC ('CREATE SCHEMA [game] AUTHORIZATION [dbo]')
+END;
 
-CREATE TABLE team_info(
+IF OBJECT_ID('game.team_info', 'U') IS NOT NULL
+DROP TABLE game.team_info;
+
+CREATE TABLE game.team_info(
     team_id int,
     franchiseId int,
     shortName varchar(50),

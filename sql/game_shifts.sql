@@ -1,7 +1,12 @@
-USE nhlstats
-GO
+IF (NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'game')) 
+BEGIN
+    EXEC ('CREATE SCHEMA [game] AUTHORIZATION [dbo]')
+END;
 
-CREATE TABLE game_shifts (
+IF OBJECT_ID('game.shifts', 'U') IS NOT NULL
+DROP TABLE game.shifts;
+
+CREATE TABLE game.shifts (
     game_id int,
     player_id int,
     [period] int,

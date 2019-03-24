@@ -12,6 +12,6 @@ def getSecrets(file = None):
 
         if os.path.isfile(file):
             with open(file) as json_secrets:
-                secrets = json.loads(json_secrets)
+                secrets = json.load(json_secrets)
 
     return secrets
